@@ -25,11 +25,19 @@ module Players
     
     def move(board)
       if !board.taken?(5)
+<<<<<<< HEAD
         input = 5
        
       elsif board.turn_count == 1 
         if !board.taken?(1)
           input = 1
+=======
+        input = '5'
+       
+      elsif board.turn_count == 1 
+        if !board.taken?(1)
+          input = '1'
+>>>>>>> b9c6f5c8fcbe61fde128f173f1d9a50065bc09e8
         end 
       
       elsif can_win?(board) != false
@@ -45,12 +53,21 @@ module Players
       else
         [1, 3, 7, 9].each do |corner|
           if !board.taken?(corner)
+<<<<<<< HEAD
             return corner
           end
         end
         input = [2, 4, 6, 8].sample
         until !board.taken?(input)
             input = [2, 4, 6, 8].sample
+=======
+            return input
+          end
+        end
+        input = rand(1..9)
+        until !board.taken?(input)
+            input = rand(1..9)
+>>>>>>> b9c6f5c8fcbe61fde128f173f1d9a50065bc09e8
           end 
       end
       input
